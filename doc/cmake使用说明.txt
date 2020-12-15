@@ -1,0 +1,3 @@
+源码：./src-path/
+目标：./src-path/build/win32
+          ./src-path/build/x64
