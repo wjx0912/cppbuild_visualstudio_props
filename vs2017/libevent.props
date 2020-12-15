@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<LIBEVENT_DIR Condition="'$(Platform)' == 'Win32'">D:\sdk\vs2017\libevent-2.1.12-stable\win32</LIBEVENT_DIR>
+		<LIBEVENT_DIR Condition="'$(Platform)' == 'x64'  ">D:\sdk\vs2017\libevent-2.1.12-stable\x64</LIBEVENT_DIR>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(LIBEVENT_DIR)\include\;$(IncludePath)</IncludePath>
+		<IncludePath>$(LIBEVENT_DIR)\WIN32-Code\nmake\;$(IncludePath)</IncludePath>
+		<LibraryPath>$(LIBEVENT_DIR)\;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>
+				libevent.lib;
+				libevent_core.lib;
+				libevent_extras.lib;
+				ws2_32.lib;
+				wsock32.lib;
+				Iphlpapi.lib;
+				%(AdditionalDependencies)
+			</AdditionalDependencies>
+		</Link>
+		<ClCompile>
+			<PreprocessorDefinitions>__LIBEVENT__2020__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<OPENBLAS_DIR>D:\sdk\vs2019\OpenBLAS-0.3.12\</OPENBLAS_DIR>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(OPENBLAS_DIR)\;$(IncludePath)</IncludePath>
+		<IncludePath Condition="'$(Platform)' == 'Win32'">$(OPENBLAS_DIR)\build\win32\;$(IncludePath)</IncludePath>
+		<IncludePath Condition="'$(Platform)' == 'x64'  ">$(OPENBLAS_DIR)\build\x64\;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(OPENBLAS_DIR)\build\win32\lib\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'  ">$(OPENBLAS_DIR)\build\x64\lib\;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies Condition="'$(Configuration)'=='Debug'">
+				Debug\openblas.lib;
+				%(AdditionalDependencies)
+			</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(Configuration)'=='Release'">
+				Release\openblas.lib;
+				%(AdditionalDependencies)
+			</AdditionalDependencies>
+		</Link>
+		<ClCompile>
+			<PreprocessorDefinitions>__OPENBLAS__2020__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>

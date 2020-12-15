@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<XERCES_C_DIR>D:\sdk\vs2015\xerces-c-Xerces-C_3_1_1\</XERCES_C_DIR>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(XERCES_C_DIR)\src\;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(Configuration)'=='Debug'">$(XERCES_C_DIR)\Build\Win32\VC10\Debug\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Configuration)'=='Release'">$(XERCES_C_DIR)\Build\Win32\VC10\Release\;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies Condition="'$(Configuration)'=='Debug'">xerces-c_3D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(Configuration)'=='Release'">xerces-c_3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+		<ClCompile>
+			<PreprocessorDefinitions>XXX_XERCES_C_XXXXXX_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>

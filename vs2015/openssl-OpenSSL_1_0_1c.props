@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<OPENSSL_DIR>D:\sdk\vs2015\openssl-OpenSSL_1_0_1c\</OPENSSL_DIR>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(OPENSSL_DIR)\inc32\;$(IncludePath)</IncludePath>
+		<LibraryPath>$(OPENSSL_DIR)\out32dll\;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>libeay32.lib;ssleay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+		<ClCompile>
+			<PreprocessorDefinitions>XXX_OPENSSL_XXXXXX_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>

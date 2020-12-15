@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros" />
+	<PropertyGroup>
+		<CHART_DIRECTOR>D:\sdk\common\ChartDirector_6.3.0.0</CHART_DIRECTOR>
+
+		<_CHART_DIRECTOR_LIB Condition="'$(Platform)' == 'Win32'">$(CHART_DIRECTOR)\lib32\</_CHART_DIRECTOR_LIB>
+		<_CHART_DIRECTOR_LIB Condition="'$(Platform)' == 'X64'"  >$(CHART_DIRECTOR)\lib64\</_CHART_DIRECTOR_LIB>
+
+		<LocalDebuggerEnvironment>PATH=$(_CHART_DIRECTOR_LIB);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+
+		<IncludePath>$(CHART_DIRECTOR)\include\;$(IncludePath)</IncludePath>
+		<LibraryPath>$(_CHART_DIRECTOR_LIB);$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>chartdir60.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemGroup />
+</Project>

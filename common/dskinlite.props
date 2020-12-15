@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<DSKINLITE_DIR>c:\Program Files (x86)\DSkinLite GUI Libray</DSKINLITE_DIR>
+		<LocalDebuggerEnvironment>PATH=$(DSKINLITE_DIR)\bin\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(DSKINLITE_DIR)\include\;$(IncludePath)</IncludePath>
+		<LibraryPath>$(DSKINLITE_DIR)\lib\;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>dskinliteu.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<DelayLoadDLLs>dskinliteu.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+		</Link>
+	</ItemDefinitionGroup>
+</Project>

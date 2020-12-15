@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros" />
+	<PropertyGroup>
+		<OPENCV>D:\sdk\vs2015\opencv-2.4.13.7\</OPENCV>
+		<IncludePath>$(OPENCV)\include;$(IncludePath)</IncludePath>
+		<IncludePath>$(OPENCV)\include\opencv;$(IncludePath)</IncludePath>
+		<IncludePath>$(OPENCV)\include\opencv2;$(IncludePath)</IncludePath>
+		<IncludePath>$(OPENCV)\modules\core\include;$(IncludePath)</IncludePath>
+		<IncludePath>$(OPENCV)\modules\highgui\include;$(IncludePath)</IncludePath>
+		<IncludePath>$(OPENCV)\modules\imgproc\include;$(IncludePath)</IncludePath>
+		<IncludePath>$(OPENCV)\modules\video\include;$(IncludePath)</IncludePath>
+		<IncludePath>$(OPENCV)\modules\features2d\include;$(IncludePath)</IncludePath>
+		<IncludePath>$(OPENCV)\modules\flann\include;$(IncludePath)</IncludePath>
+		<IncludePath>$(OPENCV)\modules\calib3d\include;$(IncludePath)</IncludePath>
+		<IncludePath>$(OPENCV)\modules\objdetect\include;$(IncludePath)</IncludePath>
+		<IncludePath>$(OPENCV)\modules\legacy\include;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(Configuration)'=='Debug'">$(OPENCV)\build\lib\Debug;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Configuration)'=='Release'">$(OPENCV)\build\lib\Release;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link Condition="'$(Configuration)'=='Debug'">
+			<AdditionalDependencies>
+				opencv_calib3d2413d.lib;
+				opencv_contrib2413d.lib;
+				opencv_core2413d.lib;
+				opencv_features2d2413d.lib;
+				opencv_flann2413d.lib;
+				opencv_gpu2413d.lib;
+				opencv_haartraining_engined.lib;
+				opencv_highgui2413d.lib;
+				opencv_imgproc2413d.lib;
+				opencv_legacy2413d.lib;
+				opencv_ml2413d.lib;
+				opencv_nonfree2413d.lib;
+				opencv_objdetect2413d.lib;
+				opencv_ocl2413d.lib;
+				opencv_photo2413d.lib;
+				opencv_stitching2413d.lib;
+				opencv_superres2413d.lib;
+				opencv_ts2413d.lib;
+				opencv_video2413d.lib;
+				opencv_videostab2413d.lib;
+				%(AdditionalDependencies)
+			</AdditionalDependencies>
+		</Link>
+		<Link Condition="'$(Configuration)'=='Release'">
+			<AdditionalDependencies>
+				opencv_calib3d2413.lib;
+				opencv_contrib2413.lib;
+				opencv_core2413.lib;
+				opencv_features2d2413.lib;
+				opencv_flann2413.lib;
+				opencv_gpu2413.lib;
+				opencv_haartraining_engine.lib;
+				opencv_highgui2413.lib;
+				opencv_imgproc2413.lib;
+				opencv_legacy2413.lib;
+				opencv_ml2413.lib;
+				opencv_nonfree2413.lib;
+				opencv_objdetect2413.lib;
+				opencv_ocl2413.lib;
+				opencv_photo2413.lib;
+				opencv_stitching2413.lib;
+				opencv_superres2413.lib;
+				opencv_ts2413.lib;
+				opencv_video2413.lib;
+				opencv_videostab2413.lib;
+				%(AdditionalDependencies)
+			</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemGroup />
+</Project>

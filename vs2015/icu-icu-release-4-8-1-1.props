@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<ICU_DIR>D:\sdk\vs2015\icu-icu-release-4-8-1-1\</ICU_DIR>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(ICU_DIR)\include\;$(IncludePath)</IncludePath>
+		<LibraryPath>$(ICU_DIR)\lib\;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>icudt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(Configuration)'=='Debug'">icuucd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(Configuration)'=='Release'">icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+		<ClCompile>
+			<PreprocessorDefinitions>XXXXXX_ICU_WINAPI_XXXXX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>

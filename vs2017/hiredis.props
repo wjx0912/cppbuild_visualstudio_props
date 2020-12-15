@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+
+	<Import Project="libevent.props" />
+	<Import Project="libuv.props" />
+
+	<PropertyGroup Label="UserMacros">
+		<HIREDIS_DIR>D:\sdk\vs2017\hiredis-1.0.0</HIREDIS_DIR>
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Debug'">PATH=$(HIREDIS_DIR)\build\win32\Debug\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Release'">PATH=$(HIREDIS_DIR)\build\win32\Release\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Debug'">PATH=$(HIREDIS_DIR)\build\x64\Debug\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Release'">PATH=$(HIREDIS_DIR)\build\x64\Release\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(HIREDIS_DIR)\;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Debug'">$(HIREDIS_DIR)\build\win32\Debug\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Release'">$(HIREDIS_DIR)\build\win32\Release\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Debug'">$(HIREDIS_DIR)\build\x64\Debug\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Release'">$(HIREDIS_DIR)\build\x64\Release\;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>hiredis.lib%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies>psapi.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<DisableSpecificWarnings>4099;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+		</Link>
+		<ClCompile>
+			<DisableSpecificWarnings>4200;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+			<DisableSpecificWarnings>4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+			<DisableSpecificWarnings>4099;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+			<PreprocessorDefinitions>_HIREDIS_XXXXXXXXXX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>

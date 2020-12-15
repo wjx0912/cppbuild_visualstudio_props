@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<JDK_DIR>C:\Program Files\Java\jdk1.8.0_261\</JDK_DIR>
+		<LocalDebuggerEnvironment>PATH=$(JDK_DIR)\jre\bin\client;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(JDK_DIR)include\;$(IncludePath)</IncludePath>
+		<IncludePath>$(JDK_DIR)include\win32\;$(IncludePath)</IncludePath>
+		<IncludePath>$(JDK_DIR)include\win32\bridge\;$(IncludePath)</IncludePath>
+		<LibraryPath>$(JDK_DIR)lib\;$(LibraryPath)</LibraryPath>
+		<!--ExecutablePath>$(JDK_DIR)jre\bin\server\;$(ExecutablePath)</ExecutablePath-->
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>jvm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+</Project>

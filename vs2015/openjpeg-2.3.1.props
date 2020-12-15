@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<OPENJPEG_DIR>D:\sdk\vs2015\openjpeg-2.3.1\</OPENJPEG_DIR>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(OPENJPEG_DIR)\src\lib\openjp2\;$(OPENJPEG_DIR)\build\src\lib\openjp2\;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(Configuration)'=='Debug'">$(OPENJPEG_DIR)\build\bin\Debug\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Configuration)'=='Release'">$(OPENJPEG_DIR)\build\bin\Release\;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>openjp2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+		<ClCompile>
+			<PreprocessorDefinitions>XXX_OPENJPEG2_XXXXXX_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>

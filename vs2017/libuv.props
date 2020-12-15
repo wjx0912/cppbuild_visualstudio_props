@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<LIBUV_DIR>D:\sdk\vs2017\libuv-1.39.0</LIBUV_DIR>
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Debug'">PATH=$(LIBUV_DIR)\build\win32\Debug\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Release'">PATH=$(LIBUV_DIR)\build\win32\Release\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Debug'">PATH=$(LIBUV_DIR)\build\x64\Debug\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Release'">PATH=$(LIBUV_DIR)\build\x64\Release\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(LIBUV_DIR)\include\;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Debug'">$(LIBUV_DIR)\build\win32\Debug\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Release'">$(LIBUV_DIR)\build\win32\Release\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Debug'">$(LIBUV_DIR)\build\x64\Debug\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Release'">$(LIBUV_DIR)\build\x64\Release\;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>uv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+		<ClCompile>
+			<PreprocessorDefinitions>_LIBUV_2020_xxxxxxx;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>
