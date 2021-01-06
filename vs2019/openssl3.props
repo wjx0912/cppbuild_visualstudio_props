@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<OPENSSL1_DIR Condition="'$(Platform)' == 'Win32'">D:\sdk\vs2019\openssl-OpenSSL_1_1_1i\dist-win32</OPENSSL1_DIR>
+		<OPENSSL1_DIR Condition="'$(Platform)' == 'x64'"  >D:\sdk\vs2019\openssl-OpenSSL_1_1_1i\dist-x64</OPENSSL1_DIR>
+		<LocalDebuggerEnvironment>PATH=$(OPENSSL1_DIR)\bin\;PATH=$(OPENSSL1_DIR)\lib\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(OPENSSL1_DIR)\include\;$(IncludePath)</IncludePath>
+		<LibraryPath>$(OPENSSL1_DIR)\lib\;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>libcrypto.lib;libssl.lib;%(AdditionalDependencies)
+			</AdditionalDependencies>
+		</Link>
+		<ClCompile>
+			<PreprocessorDefinitions>__OPENSSL1__2021__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>

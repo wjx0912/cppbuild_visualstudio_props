@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<TINYXML2_DIR>D:\sdk\vs2019\tinyxml2-8.0.0</TINYXML2_DIR>
+
+		<TINYXML2_WIN32_DEBUG_DIR>$(TINYXML2_DIR)\tinyxml2\Debug-Dll\</TINYXML2_WIN32_DEBUG_DIR>
+		<TINYXML2_WIN32_RELEASE_DIR>$(TINYXML2_DIR)\tinyxml2\Release-Dll\</TINYXML2_WIN32_RELEASE_DIR>
+		<TINYXML2_X64_DEBUG_DIR>$(TINYXML2_DIR)\tinyxml2\bin\tinyxml2\x64-Debug-Dll\</TINYXML2_X64_DEBUG_DIR>
+		<TINYXML2_X64_RELEASE_DIR>$(TINYXML2_DIR)\tinyxml2\bin\tinyxml2\x64-Release-Dll\</TINYXML2_X64_RELEASE_DIR>
+
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Debug'">PATH=$(TINYXML2_WIN32_DEBUG_DIR);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Release'">PATH=$(TINYXML2_WIN32_RELEASE_DIR);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Debug'">PATH=$(TINYXML2_X64_DEBUG_DIR);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Release'">PATH=$(TINYXML2_X64_RELEASE_DIR);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(TINYXML2_DIR);$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Debug'">$(TINYXML2_WIN32_DEBUG_DIR);$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Release'">$(TINYXML2_WIN32_RELEASE_DIR);$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Debug'">$(TINYXML2_X64_DEBUG_DIR);$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Release'">$(TINYXML2_X64_RELEASE_DIR);$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>tinyxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+		<ClCompile>
+			<PreprocessorDefinitions>__TINYXML2__2020__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>
