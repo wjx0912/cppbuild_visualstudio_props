@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<CRASHRPT2_DIR>D:\sdk\vs2019\crashrpt2-master-2020.08.25</CRASHRPT2_DIR>
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'Win32'">PATH=$(CRASHRPT2_DIR)\build\win32\bin\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'x64'  ">PATH=$(CRASHRPT2_DIR)\build\x64\bin\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(CRASHRPT2_DIR)\include\;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(CRASHRPT2_DIR)\build\win32\lib\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'  ">$(CRASHRPT2_DIR)\build\x64\lib\;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies Condition="'$(Configuration)'=='Debug'">
+				CrashRpt1500d.lib;
+				CrashRptProbe1500d.lib;
+				libjpegd.lib;
+				liboggd.lib;
+				libpngd.lib;
+				libtheorad.lib;
+				minizipd.lib;
+				tinyxmld.lib;
+				zlibd.lib;
+				%(AdditionalDependencies)
+			</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(Configuration)'=='Release'">
+				CrashRpt1500.lib;
+				CrashRptProbe1500.lib;
+				libjpeg.lib;
+				libogg.lib;
+				libpng.lib;
+				libtheora.lib;
+				minizip.lib;
+				tinyxml.lib;
+				zlib.lib;
+				%(AdditionalDependencies)
+			</AdditionalDependencies>
+		</Link>
+		<ClCompile>
+			<PreprocessorDefinitions>__CRASHRPT2__2020__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>

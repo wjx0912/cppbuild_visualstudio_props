@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<MY_REDIS_2020_DIR>D:\sdk\vs2019\redis-5.0.9</MY_REDIS_2020_DIR>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(MY_REDIS_2020_DIR)\deps\;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Debug'">$(MY_REDIS_2020_DIR)\msvs\Win32\Debug;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Release'">$(MY_REDIS_2020_DIR)\msvs\Win32\Release;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Debug'">$(MY_REDIS_2020_DIR)\msvs\x64\Debug;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Release'">$(MY_REDIS_2020_DIR)\msvs\x64\Release;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>hiredis.lib;Win32_Interop.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies>psapi.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<DisableSpecificWarnings>4099;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+		</Link>
+		<ClCompile>
+			<DisableSpecificWarnings>4200;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+			<DisableSpecificWarnings>4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+			<DisableSpecificWarnings>4099;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+			<PreprocessorDefinitions>_REDIS_XXXXXXXXXX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>
