@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<CINATRA_2021_DIR>D:\sdk\vs2019\cinatra-master</CINATRA_2021_DIR>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(CINATRA_2021_DIR)\include\;$(IncludePath)</IncludePath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<ClCompile>
+			<DisableSpecificWarnings>4244;4018;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+			<PreprocessorDefinitions>_CINATRA_2021_XXXXXXXXXX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<PreprocessorDefinitions> _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<PreprocessorDefinitions> _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>
