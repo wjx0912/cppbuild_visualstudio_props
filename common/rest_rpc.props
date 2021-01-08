@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ImportGroup Label="PropertySheets" />
 	<PropertyGroup Label="UserMacros">
-		<REST_RPC_2021_DIR>D:\sdk\vs2019\rest_rpc-0.09</REST_RPC_2021_DIR>
+		<REST_RPC_2021_DIR>D:\sdk\common\rest_rpc-0.09</REST_RPC_2021_DIR>
 	</PropertyGroup>
 	<PropertyGroup>
 		<IncludePath>$(REST_RPC_2021_DIR)\include\;$(REST_RPC_2021_DIR)\third\msgpack\include\;$(IncludePath)</IncludePath>
