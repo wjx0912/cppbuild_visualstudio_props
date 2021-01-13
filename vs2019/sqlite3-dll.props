@@ -14,6 +14,7 @@
 	<ItemDefinitionGroup>
 		<Link>
 			<AdditionalDependencies>sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<DelayLoadDLLs>sqlite3.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
 		</Link>
 		<ClCompile>
 			<PreprocessorDefinitions>__SQLITE3__2021__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
