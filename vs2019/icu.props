@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<ICU_DIR>D:\sdk\vs2019\icu4c-68_2</ICU_DIR>
+
+		<ICU_DIR_LIB Condition="'$(Platform)' == 'Win32'">$(ICU_DIR)\lib;$(IncludePath)</ICU_DIR_LIB>
+		<ICU_DIR_BIN Condition="'$(Platform)' == 'Win32'">$(ICU_DIR)\bin;$(IncludePath)</ICU_DIR_BIN>
+		<ICU_DIR_LIB Condition="'$(Platform)' == 'x64'">$(ICU_DIR)\lib64;$(IncludePath)</ICU_DIR_LIB>
+		<ICU_DIR_BIN Condition="'$(Platform)' == 'x64'">$(ICU_DIR)\bin64;$(IncludePath)</ICU_DIR_BIN>
+
+		<LocalDebuggerEnvironment>PATH=$(ICU_DIR_BIN);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(ICU_DIR)\include\;$(IncludePath)</IncludePath>
+		<LibraryPath>$(ICU_DIR_LIB)\;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>
+				icudt.lib;%(AdditionalDependencies)
+			</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(Configuration)'=='Debug'">
+				icuind.lib;icuucd.lib;%(AdditionalDependencies)
+			</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(Configuration)'=='Release'">
+				icuin.lib;icuuc.lib;%(AdditionalDependencies)
+			</AdditionalDependencies>
+			<DelayLoadDLLs>
+				icudt.dll;%(DelayLoadDLLs)
+			</DelayLoadDLLs>
+			<DelayLoadDLLs Condition="'$(Configuration)'=='Debug'">
+				icuind.dll;icuucd.dll;%(DelayLoadDLLs)
+			</DelayLoadDLLs>
+			<DelayLoadDLLs Condition="'$(Configuration)'=='Release'">
+				icuin.dll;icuuc.dll;%(DelayLoadDLLs)
+			</DelayLoadDLLs>
+		</Link>
+		<ClCompile>
+			<PreprocessorDefinitions>ICU_2021_WINAPI_XXXXX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>
