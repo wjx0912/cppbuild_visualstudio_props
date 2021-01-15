@@ -4,6 +4,7 @@
 	<PropertyGroup Label="UserMacros">
 		<OPENCV_PATH Condition="'$(Platform)' == 'x64'">D:\sdk\vs2019\opencv-4.5.1\build\x64-cpu\install</OPENCV_PATH>
 		<OPENCV_PATH Condition="'$(Platform)' == 'Win32'">D:\sdk\vs2019\opencv-4.5.1\build\win32-cpu\install</OPENCV_PATH>
+
 		<OPENCV_PATH_LIB Condition="'$(Platform)' == 'x64'">$(OPENCV_PATH)\x64\vc16\lib</OPENCV_PATH_LIB>
 		<OPENCV_PATH_LIB Condition="'$(Platform)' == 'Win32'">$(OPENCV_PATH)\x86\vc16\lib</OPENCV_PATH_LIB>
 		<OPENCV_PATH_BIN Condition="'$(Platform)' == 'x64'">$(OPENCV_PATH)\bin;$(OPENCV_PATH)\etc;$(OPENCV_PATH)\x64\vc16\bin</OPENCV_PATH_BIN>

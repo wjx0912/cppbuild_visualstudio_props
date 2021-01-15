@@ -4,15 +4,18 @@
 	<PropertyGroup Label="UserMacros">
 		<OPENCV_PATH Condition="'$(Platform)' == 'x64'">D:\sdk\vs2019\opencv-4.5.1\build\x64-gpu\install</OPENCV_PATH>
 		<OPENCV_PATH Condition="'$(Platform)' == 'Win32'">D:\sdk\vs2019\opencv-4.5.1\build\win32-gpu\install</OPENCV_PATH>
+
+		<OPENCV_PATH_LIB Condition="'$(Platform)' == 'x64'">$(OPENCV_PATH)\x64\vc16\lib</OPENCV_PATH_LIB>
+		<OPENCV_PATH_LIB Condition="'$(Platform)' == 'Win32'">$(OPENCV_PATH)\x86\vc16\lib</OPENCV_PATH_LIB>
+		<OPENCV_PATH_BIN Condition="'$(Platform)' == 'x64'">$(OPENCV_PATH)\bin;$(OPENCV_PATH)\etc;$(OPENCV_PATH)\x64\vc16\bin</OPENCV_PATH_BIN>
+		<OPENCV_PATH_BIN Condition="'$(Platform)' == 'Win32'">$(OPENCV_PATH)\bin;$(OPENCV_PATH)\etc;$(OPENCV_PATH)\x86\vc16\bin</OPENCV_PATH_BIN>
 	</PropertyGroup>
 	<PropertyGroup>
 		<IncludePath>$(OPENCV_PATH)\include;$(IncludePath)</IncludePath>
-		<LibraryPath Condition="'$(Platform)' == 'x64'">$(OPENCV_PATH)\x64\vc16\lib;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(OPENCV_PATH)\Win32\vc16\lib;$(LibraryPath)</LibraryPath>
-		<ExecutablePath>$(OPENCV_PATH)\bin;$(ExecutablePath)</ExecutablePath>
-		<ExecutablePath>$(OPENCV_PATH)\etc;$(ExecutablePath)</ExecutablePath>
-		<ExecutablePath Condition="'$(Platform)' == 'x64'">$(OPENCV_PATH)\x64\vc16\bin;$(ExecutablePath)</ExecutablePath>
-		<ExecutablePath Condition="'$(Platform)' == 'Win32'">$(OPENCV_PATH)\Win32\vc16\bin;$(ExecutablePath)</ExecutablePath>
+		<LibraryPath>$(OPENCV_PATH_LIB);$(LibraryPath)</LibraryPath>
+		<ExecutablePath>$(OPENCV_PATH_BIN);$(ExecutablePath)</ExecutablePath>
+
+		<LocalDebuggerEnvironment>PATH=$(OPENCV_PATH_BIN);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link Condition="'$(Configuration)'=='Debug'">
@@ -233,6 +236,16 @@
 			</DelayLoadDLLs>
 			<AdditionalOptions>/ignore:4199 %(AdditionalOptions)</AdditionalOptions>
 		</Link>
+		<Link>
+			<DelayLoadDLLs Condition="'$(Platform)' == 'Win32'">
+				opencv_videoio_ffmpeg451.dll;
+				%(DelayLoadDLLs)
+			</DelayLoadDLLs>
+			<DelayLoadDLLs Condition="'$(Platform)' == 'x64'">
+				opencv_videoio_ffmpeg451_64.dll;
+				%(DelayLoadDLLs)
+			</DelayLoadDLLs>
+		</Link>
 		<ClCompile>
 			<DisableSpecificWarnings>4199;%(DisableSpecificWarnings)</DisableSpecificWarnings>
 			<DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
@@ -245,3 +258,5 @@
 	</ItemDefinitionGroup>
 	<ItemGroup />
 </Project>
+
+
