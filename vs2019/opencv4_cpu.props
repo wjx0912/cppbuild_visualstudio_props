@@ -8,11 +8,11 @@
 	<PropertyGroup>
 		<IncludePath>$(OPENCV_PATH)\include;$(IncludePath)</IncludePath>
 		<LibraryPath Condition="'$(Platform)' == 'x64'">$(OPENCV_PATH)\x64\vc16\lib;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(OPENCV_PATH)\Win32\vc16\lib;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(OPENCV_PATH)\x86\vc16\lib;$(LibraryPath)</LibraryPath>
 		<ExecutablePath>$(OPENCV_PATH)\bin;$(ExecutablePath)</ExecutablePath>
 		<ExecutablePath>$(OPENCV_PATH)\etc;$(ExecutablePath)</ExecutablePath>
 		<ExecutablePath Condition="'$(Platform)' == 'x64'">$(OPENCV_PATH)\x64\vc16\bin;$(ExecutablePath)</ExecutablePath>
-		<ExecutablePath Condition="'$(Platform)' == 'Win32'">$(OPENCV_PATH)\Win32\vc16\bin;$(ExecutablePath)</ExecutablePath>
+		<ExecutablePath Condition="'$(Platform)' == 'Win32'">$(OPENCV_PATH)\x86\vc16\bin;$(ExecutablePath)</ExecutablePath>
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link Condition="'$(Configuration)'=='Debug'">
@@ -233,6 +233,16 @@
 			</DelayLoadDLLs>
 			<AdditionalOptions>/ignore:4199 %(AdditionalOptions)</AdditionalOptions>
 		</Link>
+		<Link>
+			<DelayLoadDLLs Condition="'$(Platform)' == 'Win32'">
+				opencv_videoio_ffmpeg451.dll;
+				%(DelayLoadDLLs)
+			</DelayLoadDLLs>
+			<DelayLoadDLLs Condition="'$(Platform)' == 'x64'">
+				opencv_videoio_ffmpeg451_64.dll;
+				%(DelayLoadDLLs)
+			</DelayLoadDLLs>
+		</Link>
 		<ClCompile>
 			<DisableSpecificWarnings>4199;%(DisableSpecificWarnings)</DisableSpecificWarnings>
 			<DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
@@ -245,3 +255,5 @@
 	</ItemDefinitionGroup>
 	<ItemGroup />
 </Project>
+
+
