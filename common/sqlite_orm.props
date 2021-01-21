@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<SQLITE_ORM_2021_DIR>D:\sdk\common\sqlite_orm-1.6\</SQLITE_ORM_2021_DIR>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(SQLITE_ORM_2021_DIR)include\;$(IncludePath)</IncludePath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<ClCompile>
+			<PreprocessorDefinitions>_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>
