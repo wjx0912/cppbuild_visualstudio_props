@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<TIMEZONE_LIB_DATE_2021_DIR>D:\sdk\common\date-3.0.0\</TIMEZONE_LIB_DATE_2021_DIR>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(TIMEZONE_LIB_DATE_2021_DIR)include\;$(IncludePath)</IncludePath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<ClCompile>
+			<PreprocessorDefinitions>NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>
