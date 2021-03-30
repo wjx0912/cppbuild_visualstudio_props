@@ -7,7 +7,7 @@
 	<PropertyGroup>
 		<IncludePath>$(CXIMAGE_PATH)\CxImage;$(IncludePath)</IncludePath>
 
-		<LibraryPath Condition="'$(Configuration)'=='Debug'">$(CXIMAGE_PATH)\CxImage\CxImageDLL\Release;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Configuration)'=='Debug'">$(CXIMAGE_PATH)\CxImage\CxImageDLL\Debug;$(LibraryPath)</LibraryPath>
 		<LibraryPath Condition="'$(Configuration)'=='Release'">$(CXIMAGE_PATH)\CxImage\CxImageDLL\Release;$(LibraryPath)</LibraryPath>
 
 		<ExecutablePath>$(CXIMAGE_PATH)\bin;$(ExecutablePath)</ExecutablePath>
@@ -16,8 +16,8 @@
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link>
-			<AdditionalDependencies Condition="'$(Configuration)'=='Debug'">cximagecrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
-			<AdditionalDependencies Condition="'$(Configuration)'=='Release'">cximagecrtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(Configuration)'=='Debug'">cximagecrtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(Configuration)'=='Release'">cximagecrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
 			<AdditionalOptions>/ignore:4199 %(AdditionalOptions)</AdditionalOptions>
 		</Link>
 		<ClCompile>
