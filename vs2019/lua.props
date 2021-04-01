@@ -17,7 +17,7 @@
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link>
-			<AdditionalDependencies>lua543-dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies>lua-5.4.3.lib;%(AdditionalDependencies)</AdditionalDependencies>
 		</Link>
 		<ClCompile>
 			<PreprocessorDefinitions>_LUA_540_xxxxxxx;%(PreprocessorDefinitions)</PreprocessorDefinitions>
