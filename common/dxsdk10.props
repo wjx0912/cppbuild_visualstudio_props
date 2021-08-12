@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+        <!-- DirectX Software Development Kit -->
+        <!-- download url: https://www.microsoft.com/en-us/download/details.aspx?id=6812 -->
+		<DXSDK10_DIR>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\</DXSDK10_DIR>
+
+		<_DXSDK10_DIR_LIB Condition="'$(Platform)' == 'Win32'">$(DXSDK10_DIR)\Lib\x86\</_DXSDK10_DIR_LIB>
+		<_DXSDK10_DIR_LIB Condition="'$(Platform)' == 'X64'"  >$(DXSDK10_DIR)\Lib\x64\</_DXSDK10_DIR_LIB>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(DXSDK10_DIR)Include\;$(IncludePath)</IncludePath>
+		<LibraryPath>$(_DXSDK10_DIR_LIB);$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+</Project>
