@@ -13,4 +13,9 @@
 		<IncludePath>$(DXSDK10_DIR)Include\;$(IncludePath)</IncludePath>
 		<LibraryPath>$(_DXSDK10_DIR_LIB);$(LibraryPath)</LibraryPath>
 	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
 </Project>
