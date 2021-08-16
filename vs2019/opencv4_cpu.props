@@ -2,13 +2,13 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ImportGroup Label="PropertySheets" />
 	<PropertyGroup Label="UserMacros">
-		<OPENCV_PATH Condition="'$(Platform)' == 'x64'">D:\sdk\vs2019\opencv-4.5.1\build\x64-cpu\install</OPENCV_PATH>
-		<OPENCV_PATH Condition="'$(Platform)' == 'Win32'">D:\sdk\vs2019\opencv-4.5.1\build\win32-cpu\install</OPENCV_PATH>
+		<OPENCV_PATH Condition="'$(Platform)' == 'x64'  ">D:\sdk\vs2019\opencv-4.5.3\build\cpu_x64\install</OPENCV_PATH>
+		<OPENCV_PATH Condition="'$(Platform)' == 'Win32'">D:\sdk\vs2019\opencv-4.5.3\build\cpu-win32\install</OPENCV_PATH>
 
-		<OPENCV_PATH_LIB Condition="'$(Platform)' == 'x64'">$(OPENCV_PATH)\x64\vc16\lib</OPENCV_PATH_LIB>
+		<OPENCV_PATH_LIB Condition="'$(Platform)' == 'x64'  ">$(OPENCV_PATH)\x64\vc16\lib</OPENCV_PATH_LIB>
 		<OPENCV_PATH_LIB Condition="'$(Platform)' == 'Win32'">$(OPENCV_PATH)\x86\vc16\lib</OPENCV_PATH_LIB>
-		<OPENCV_PATH_BIN Condition="'$(Platform)' == 'x64'">$(OPENCV_PATH)\bin;$(OPENCV_PATH)\etc;$(OPENCV_PATH)\x64\vc16\bin</OPENCV_PATH_BIN>
-		<OPENCV_PATH_BIN Condition="'$(Platform)' == 'Win32'">$(OPENCV_PATH)\bin;$(OPENCV_PATH)\etc;$(OPENCV_PATH)\x86\vc16\bin</OPENCV_PATH_BIN>
+		<OPENCV_PATH_BIN Condition="'$(Platform)' == 'x64'  ">$(OPENCV_PATH)\x64\vc16\bin;$(OPENCV_PATH)\bin;$(OPENCV_PATH)\etc</OPENCV_PATH_BIN>
+		<OPENCV_PATH_BIN Condition="'$(Platform)' == 'Win32'">$(OPENCV_PATH)\x86\vc16\bin;$(OPENCV_PATH)\bin;$(OPENCV_PATH)\etc</OPENCV_PATH_BIN>
 	</PropertyGroup>
 	<PropertyGroup>
 		<IncludePath>$(OPENCV_PATH)\include;$(IncludePath)</IncludePath>
@@ -20,231 +20,105 @@
 	<ItemDefinitionGroup>
 		<Link Condition="'$(Configuration)'=='Debug'">
 			<AdditionalDependencies>
-				opencv_aruco451d.lib;
-				opencv_bgsegm451d.lib;
-				opencv_bioinspired451d.lib;
-				opencv_calib3d451d.lib;
-				opencv_ccalib451d.lib;
-				opencv_core451d.lib;
-				opencv_datasets451d.lib;
-				opencv_dnn_objdetect451d.lib;
-				opencv_dnn_superres451d.lib;
-				opencv_dnn451d.lib;
-				opencv_dpm451d.lib;
-				opencv_face451d.lib;
-				opencv_features2d451d.lib;
-				opencv_flann451d.lib;
-				opencv_fuzzy451d.lib;
-				opencv_gapi451d.lib;
-				opencv_hfs451d.lib;
-				opencv_highgui451d.lib;
-				opencv_img_hash451d.lib;
-				opencv_imgcodecs451d.lib;
-				opencv_imgproc451d.lib;
-				opencv_intensity_transform451d.lib;
-				opencv_line_descriptor451d.lib;
-				opencv_mcc451d.lib;
-				opencv_ml451d.lib;
-				opencv_objdetect451d.lib;
-				opencv_optflow451d.lib;
-				opencv_phase_unwrapping451d.lib;
-				opencv_photo451d.lib;
-				opencv_plot451d.lib;
-				opencv_quality451d.lib;
-				opencv_rapid451d.lib;
-				opencv_reg451d.lib;
-				opencv_rgbd451d.lib;
-				opencv_saliency451d.lib;
-				opencv_shape451d.lib;
-				opencv_stereo451d.lib;
-				opencv_stitching451d.lib;
-				opencv_structured_light451d.lib;
-				opencv_superres451d.lib;
-				opencv_surface_matching451d.lib;
-				opencv_text451d.lib;
-				opencv_tracking451d.lib;
-				opencv_video451d.lib;
-				opencv_videoio451d.lib;
-				opencv_videostab451d.lib;
-				opencv_xfeatures2d451d.lib;
-				opencv_ximgproc451d.lib;
-				opencv_xobjdetect451d.lib;
-				opencv_xphoto451d.lib;
+                opencv_aruco453d.lib;
+                opencv_bgsegm453d.lib;
+                opencv_bioinspired453d.lib;
+                opencv_calib3d453d.lib;
+                opencv_ccalib453d.lib;
+                opencv_core453d.lib;
+                opencv_datasets453d.lib;
+                opencv_dpm453d.lib;
+                opencv_face453d.lib;
+                opencv_features2d453d.lib;
+                opencv_flann453d.lib;
+                opencv_fuzzy453d.lib;
+                opencv_gapi453d.lib;
+                opencv_hfs453d.lib;
+                opencv_highgui453d.lib;
+                opencv_imgcodecs453d.lib;
+                opencv_imgproc453d.lib;
+                opencv_img_hash453d.lib;
+                opencv_intensity_transform453d.lib;
+                opencv_line_descriptor453d.lib;
+                opencv_ml453d.lib;
+                opencv_objdetect453d.lib;
+                opencv_optflow453d.lib;
+                opencv_phase_unwrapping453d.lib;
+                opencv_photo453d.lib;
+                opencv_plot453d.lib;
+                opencv_quality453d.lib;
+                opencv_rapid453d.lib;
+                opencv_reg453d.lib;
+                opencv_rgbd453d.lib;
+                opencv_saliency453d.lib;
+                opencv_shape453d.lib;
+                opencv_stereo453d.lib;
+                opencv_stitching453d.lib;
+                opencv_structured_light453d.lib;
+                opencv_superres453d.lib;
+                opencv_surface_matching453d.lib;
+                opencv_tracking453d.lib;
+                opencv_video453d.lib;
+                opencv_videoio453d.lib;
+                opencv_videostab453d.lib;
+                opencv_xfeatures2d453d.lib;
+                opencv_ximgproc453d.lib;
+                opencv_xobjdetect453d.lib;
+                opencv_xphoto453d.lib;
 				%(AdditionalDependencies)
 			</AdditionalDependencies>
-			<DelayLoadDLLs>
-				opencv_aruco451d.dll;
-				opencv_bgsegm451d.dll;
-				opencv_bioinspired451d.dll;
-				opencv_calib3d451d.dll;
-				opencv_ccalib451d.dll;
-				opencv_core451d.dll;
-				opencv_datasets451d.dll;
-				opencv_dnn_objdetect451d.dll;
-				opencv_dnn_superres451d.dll;
-				opencv_dnn451d.dll;
-				opencv_dpm451d.dll;
-				opencv_face451d.dll;
-				opencv_features2d451d.dll;
-				opencv_flann451d.dll;
-				opencv_fuzzy451d.dll;
-				opencv_gapi451d.dll;
-				opencv_hfs451d.dll;
-				opencv_highgui451d.dll;
-				opencv_img_hash451d.dll;
-				opencv_imgcodecs451d.dll;
-				opencv_imgproc451d.dll;
-				opencv_intensity_transform451d.dll;
-				opencv_line_descriptor451d.dll;
-				opencv_mcc451d.dll;
-				opencv_ml451d.dll;
-				opencv_objdetect451d.dll;
-				opencv_optflow451d.dll;
-				opencv_phase_unwrapping451d.dll;
-				opencv_photo451d.dll;
-				opencv_plot451d.dll;
-				opencv_quality451d.dll;
-				opencv_rapid451d.dll;
-				opencv_reg451d.dll;
-				opencv_rgbd451d.dll;
-				opencv_saliency451d.dll;
-				opencv_shape451d.dll;
-				opencv_stereo451d.dll;
-				opencv_stitching451d.dll;
-				opencv_structured_light451d.dll;
-				opencv_superres451d.dll;
-				opencv_surface_matching451d.dll;
-				opencv_text451d.dll;
-				opencv_tracking451d.dll;
-				opencv_video451d.dll;
-				opencv_videoio451d.dll;
-				opencv_videostab451d.dll;
-				opencv_xfeatures2d451d.dll;
-				opencv_ximgproc451d.dll;
-				opencv_xobjdetect451d.dll;
-				opencv_xphoto451d.dll;
-				%(DelayLoadDLLs)
-			</DelayLoadDLLs>
 			<AdditionalOptions>/ignore:4199 %(AdditionalOptions)</AdditionalOptions>
 		</Link>
 		<Link Condition="'$(Configuration)'=='Release'">
 			<AdditionalDependencies>
-				opencv_aruco451.lib;
-				opencv_bgsegm451.lib;
-				opencv_bioinspired451.lib;
-				opencv_calib3d451.lib;
-				opencv_ccalib451.lib;
-				opencv_core451.lib;
-				opencv_datasets451.lib;
-				opencv_dnn_objdetect451.lib;
-				opencv_dnn_superres451.lib;
-				opencv_dnn451.lib;
-				opencv_dpm451.lib;
-				opencv_face451.lib;
-				opencv_features2d451.lib;
-				opencv_flann451.lib;
-				opencv_fuzzy451.lib;
-				opencv_gapi451.lib;
-				opencv_hfs451.lib;
-				opencv_highgui451.lib;
-				opencv_img_hash451.lib;
-				opencv_imgcodecs451.lib;
-				opencv_imgproc451.lib;
-				opencv_intensity_transform451.lib;
-				opencv_line_descriptor451.lib;
-				opencv_mcc451.lib;
-				opencv_ml451.lib;
-				opencv_objdetect451.lib;
-				opencv_optflow451.lib;
-				opencv_phase_unwrapping451.lib;
-				opencv_photo451.lib;
-				opencv_plot451.lib;
-				opencv_quality451.lib;
-				opencv_rapid451.lib;
-				opencv_reg451.lib;
-				opencv_rgbd451.lib;
-				opencv_saliency451.lib;
-				opencv_shape451.lib;
-				opencv_stereo451.lib;
-				opencv_stitching451.lib;
-				opencv_structured_light451.lib;
-				opencv_superres451.lib;
-				opencv_surface_matching451.lib;
-				opencv_text451.lib;
-				opencv_tracking451.lib;
-				opencv_video451.lib;
-				opencv_videoio451.lib;
-				opencv_videostab451.lib;
-				opencv_xfeatures2d451.lib;
-				opencv_ximgproc451.lib;
-				opencv_xobjdetect451.lib;
-				opencv_xphoto451.lib;
+                opencv_aruco453.lib;
+                opencv_bgsegm453.lib;
+                opencv_bioinspired453.lib;
+                opencv_calib3d453.lib;
+                opencv_ccalib453.lib;
+                opencv_core453.lib;
+                opencv_datasets453.lib;
+                opencv_dpm453.lib;
+                opencv_face453.lib;
+                opencv_features2d453.lib;
+                opencv_flann453.lib;
+                opencv_fuzzy453.lib;
+                opencv_gapi453.lib;
+                opencv_hfs453.lib;
+                opencv_highgui453.lib;
+                opencv_imgcodecs453.lib;
+                opencv_imgproc453.lib;
+                opencv_img_hash453.lib;
+                opencv_intensity_transform453.lib;
+                opencv_line_descriptor453.lib;
+                opencv_ml453.lib;
+                opencv_objdetect453.lib;
+                opencv_optflow453.lib;
+                opencv_phase_unwrapping453.lib;
+                opencv_photo453.lib;
+                opencv_plot453.lib;
+                opencv_quality453.lib;
+                opencv_rapid453.lib;
+                opencv_reg453.lib;
+                opencv_rgbd453.lib;
+                opencv_saliency453.lib;
+                opencv_shape453.lib;
+                opencv_stereo453.lib;
+                opencv_stitching453.lib;
+                opencv_structured_light453.lib;
+                opencv_superres453.lib;
+                opencv_surface_matching453.lib;
+                opencv_tracking453.lib;
+                opencv_video453.lib;
+                opencv_videoio453.lib;
+                opencv_videostab453.lib;
+                opencv_xfeatures2d453.lib;
+                opencv_ximgproc453.lib;
+                opencv_xobjdetect453.lib;
+                opencv_xphoto453.lib;
 				%(AdditionalDependencies)
 			</AdditionalDependencies>
-			<DelayLoadDLLs>
-				opencv_aruco451.dll;
-				opencv_bgsegm451.dll;
-				opencv_bioinspired451.dll;
-				opencv_calib3d451.dll;
-				opencv_ccalib451.dll;
-				opencv_core451.dll;
-				opencv_datasets451.dll;
-				opencv_dnn_objdetect451.dll;
-				opencv_dnn_superres451.dll;
-				opencv_dnn451.dll;
-				opencv_dpm451.dll;
-				opencv_face451.dll;
-				opencv_features2d451.dll;
-				opencv_flann451.dll;
-				opencv_fuzzy451.dll;
-				opencv_gapi451.dll;
-				opencv_hfs451.dll;
-				opencv_highgui451.dll;
-				opencv_img_hash451.dll;
-				opencv_imgcodecs451.dll;
-				opencv_imgproc451.dll;
-				opencv_intensity_transform451.dll;
-				opencv_line_descriptor451.dll;
-				opencv_mcc451.dll;
-				opencv_ml451.dll;
-				opencv_objdetect451.dll;
-				opencv_optflow451.dll;
-				opencv_phase_unwrapping451.dll;
-				opencv_photo451.dll;
-				opencv_plot451.dll;
-				opencv_quality451.dll;
-				opencv_rapid451.dll;
-				opencv_reg451.dll;
-				opencv_rgbd451.dll;
-				opencv_saliency451.dll;
-				opencv_shape451.dll;
-				opencv_stereo451.dll;
-				opencv_stitching451.dll;
-				opencv_structured_light451.dll;
-				opencv_superres451.dll;
-				opencv_surface_matching451.dll;
-				opencv_text451.dll;
-				opencv_tracking451.dll;
-				opencv_video451.dll;
-				opencv_videoio451.dll;
-				opencv_videostab451.dll;
-				opencv_xfeatures2d451.dll;
-				opencv_ximgproc451.dll;
-				opencv_xobjdetect451.dll;
-				opencv_xphoto451.dll;
-				%(DelayLoadDLLs)
-			</DelayLoadDLLs>
 			<AdditionalOptions>/ignore:4199 %(AdditionalOptions)</AdditionalOptions>
-		</Link>
-		<Link>
-			<DelayLoadDLLs Condition="'$(Platform)' == 'Win32'">
-				opencv_videoio_ffmpeg451.dll;
-				%(DelayLoadDLLs)
-			</DelayLoadDLLs>
-			<DelayLoadDLLs Condition="'$(Platform)' == 'x64'">
-				opencv_videoio_ffmpeg451_64.dll;
-				%(DelayLoadDLLs)
-			</DelayLoadDLLs>
 		</Link>
 		<ClCompile>
 			<DisableSpecificWarnings>4199;%(DisableSpecificWarnings)</DisableSpecificWarnings>
@@ -253,7 +127,7 @@
 			<PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 		</ClCompile>
 		<ClCompile>
-			<PreprocessorDefinitions>OPENCV_TEST_DATA_PATH=D:\sdk\vs2019\opencv-4.5.1\opencv_extra-4.5.1\testdata;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<PreprocessorDefinitions>OPENCV_TEST_DATA_PATH=D:\sdk\vs2019\opencv-4.5.3\opencv_extra-4.5.3\testdata;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 		</ClCompile>
 	</ItemDefinitionGroup>
 	<ItemGroup />
