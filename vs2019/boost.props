@@ -14,18 +14,18 @@ MSBuild  console_app.vcxproj  /p:Configuration=Debug /p:Platform=x86  /target:Re
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ImportGroup Label="PropertySheets" />
 	<PropertyGroup Label="UserMacros">
-		<BOOST_DIR>D:\sdk\vs2019\boost_1_76_0</BOOST_DIR>
+		<BOOST_DIR>D:\sdk\vs2019\boost_1_77_0</BOOST_DIR>
 	</PropertyGroup>
 	<PropertyGroup>
 		<IncludePath>$(BOOST_DIR);$(IncludePath)</IncludePath>
 		<!---->
-		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(BOOST_DIR)\build\default-win32\stage\lib\;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'x64'">$(BOOST_DIR)\build\default-x64\stage\lib\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(BOOST_DIR)\build\x86-default\stage\lib\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'">$(BOOST_DIR)\build\x64-default\stage\lib\;$(LibraryPath)</LibraryPath>
 		<!--
-		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(UseOfMFC)' == 'dynamic'">$(BOOST_DIR)\build\default-win32\stage\lib\;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(UseOfMFC)' == 'dynamic'">$(BOOST_DIR)\build\default-x64\stage\lib\;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(UseOfMFC)' == 'static' ">$(BOOST_DIR)\build\static-win32\stage\lib\;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(UseOfMFC)' == 'static' ">$(BOOST_DIR)\build\static-x64\stage\lib\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(UseOfMFC)' == 'dynamic'">$(BOOST_DIR)\build\x86-default\stage\lib\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(UseOfMFC)' == 'dynamic'">$(BOOST_DIR)\build\x64-default\stage\lib\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(UseOfMFC)' == 'static' ">$(BOOST_DIR)\build\x86-static\stage\lib\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(UseOfMFC)' == 'static' ">$(BOOST_DIR)\build\x64-static\stage\lib\;$(LibraryPath)</LibraryPath>
 		-->
 	</PropertyGroup>
 	<ItemDefinitionGroup>
