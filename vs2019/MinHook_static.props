@@ -3,8 +3,6 @@
 	<ImportGroup Label="PropertySheets" />
 	<PropertyGroup Label="UserMacros">
 		<MINHOOK_DIR>D:\sdk\vs2019\minhook-master-2021.08.13\build\VC16</MINHOOK_DIR>
-		<LocalDebuggerEnvironment Condition="'$(Configuration)' == 'Debug'">PATH=$(MINHOOK_DIR)\bin\Debug\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
-		<LocalDebuggerEnvironment Condition="'$(Configuration)' == 'Release'">PATH=$(MINHOOK_DIR)\bin\Release\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
 	</PropertyGroup>
 	<PropertyGroup>
 		<IncludePath>$(MINHOOK_DIR)\..\..\include\;$(IncludePath)</IncludePath>

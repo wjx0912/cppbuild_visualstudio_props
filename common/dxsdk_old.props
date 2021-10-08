@@ -4,14 +4,14 @@
 	<PropertyGroup Label="UserMacros">
         <!-- DirectX Software Development Kit -->
         <!-- download url: https://www.microsoft.com/en-us/download/details.aspx?id=6812 -->
-		<DXSDK10_DIR>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\</DXSDK10_DIR>
+		<DXSDK_OLD_DIR>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\</DXSDK_OLD_DIR>
 
-		<_DXSDK10_DIR_LIB Condition="'$(Platform)' == 'Win32'">$(DXSDK10_DIR)\Lib\x86\</_DXSDK10_DIR_LIB>
-		<_DXSDK10_DIR_LIB Condition="'$(Platform)' == 'X64'"  >$(DXSDK10_DIR)\Lib\x64\</_DXSDK10_DIR_LIB>
+		<_DXSDK_OLD_DIR_LIB Condition="'$(Platform)' == 'Win32'">$(DXSDK_OLD_DIR)\Lib\x86\</_DXSDK_OLD_DIR_LIB>
+		<_DXSDK_OLD_DIR_LIB Condition="'$(Platform)' == 'X64'"  >$(DXSDK_OLD_DIR)\Lib\x64\</_DXSDK_OLD_DIR_LIB>
 	</PropertyGroup>
 	<PropertyGroup>
-		<IncludePath>$(DXSDK10_DIR)Include\;$(IncludePath)</IncludePath>
-		<LibraryPath>$(_DXSDK10_DIR_LIB);$(LibraryPath)</LibraryPath>
+		<IncludePath>$(DXSDK_OLD_DIR)Include\;$(IncludePath)</IncludePath>
+		<LibraryPath>$(_DXSDK_OLD_DIR_LIB);$(LibraryPath)</LibraryPath>
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link>
