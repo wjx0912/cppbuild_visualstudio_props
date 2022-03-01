@@ -11,8 +11,8 @@
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link>
-			<AdditionalDependencies Condition="'$(Platform)' == 'x64'">libMinHook.x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
-			<AdditionalDependencies Condition="'$(Platform)' == 'Win32'">libMinHook.x86.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(PlatformTarget)' == 'x64'">libMinHook.x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(PlatformTarget)' == 'x86'">libMinHook.x86.lib;%(AdditionalDependencies)</AdditionalDependencies>
 		</Link>
 		<ClCompile>
 			<PreprocessorDefinitions>__MINHOOK__2021__;%(PreprocessorDefinitions)</PreprocessorDefinitions>

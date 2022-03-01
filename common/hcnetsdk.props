@@ -2,8 +2,8 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ImportGroup Label="PropertySheets" />
 	<PropertyGroup Label="UserMacros">
-		<HCNETSDK_DIR Condition="'$(Platform)' == 'Win32'">D:\sdk\common\CH-HCNetSDKV6.1.4.42_build20200527_win32\</HCNETSDK_DIR>
-		<HCNETSDK_DIR Condition="'$(Platform)' == 'X64'"  >D:\sdk\common\CH-HCNetSDKV6.1.4.42_build20200527_win64\</HCNETSDK_DIR>
+		<HCNETSDK_DIR Condition="'$(PlatformTarget)' == 'x86'">D:\sdk\common\CH-HCNetSDKV6.1.4.42_build20200527_win32\</HCNETSDK_DIR>
+		<HCNETSDK_DIR Condition="'$(PlatformTarget)' == 'x64'"  >D:\sdk\common\CH-HCNetSDKV6.1.4.42_build20200527_win64\</HCNETSDK_DIR>
 
 		<LocalDebuggerEnvironment>PATH=$(HCNETSDK_DIR)\库文件;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
 		<LocalDebuggerEnvironment>PATH=$(HCNETSDK_DIR)\库文件\HCNetSDKCom;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>

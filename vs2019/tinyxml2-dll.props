@@ -4,10 +4,10 @@
 	<PropertyGroup Label="UserMacros">
 		<TINYXML2_DIR>D:\sdk\vs2019\tinyxml2-8.0.0</TINYXML2_DIR>
 
-		<TINYXML2_DIR_LIBDLL Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Debug'">$(TINYXML2_DIR)\tinyxml2\Debug-Dll\</TINYXML2_DIR_LIBDLL>
-		<TINYXML2_DIR_LIBDLL Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Release'">$(TINYXML2_DIR)\tinyxml2\Release-Dll\</TINYXML2_DIR_LIBDLL>
-		<TINYXML2_DIR_LIBDLL Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Debug'">$(TINYXML2_DIR)\tinyxml2\bin\tinyxml2\x64-Debug-Dll\</TINYXML2_DIR_LIBDLL>
-		<TINYXML2_DIR_LIBDLL Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Release'">$(TINYXML2_DIR)\tinyxml2\bin\tinyxml2\x64-Release-Dll\</TINYXML2_DIR_LIBDLL>
+		<TINYXML2_DIR_LIBDLL Condition="'$(PlatformTarget)' == 'x86'  and '$(Configuration)'=='Debug'">$(TINYXML2_DIR)\tinyxml2\Debug-Dll\</TINYXML2_DIR_LIBDLL>
+		<TINYXML2_DIR_LIBDLL Condition="'$(PlatformTarget)' == 'x86'  and '$(Configuration)'=='Release'">$(TINYXML2_DIR)\tinyxml2\Release-Dll\</TINYXML2_DIR_LIBDLL>
+		<TINYXML2_DIR_LIBDLL Condition="'$(PlatformTarget)' == 'x64'  and '$(Configuration)'=='Debug'">$(TINYXML2_DIR)\tinyxml2\bin\tinyxml2\x64-Debug-Dll\</TINYXML2_DIR_LIBDLL>
+		<TINYXML2_DIR_LIBDLL Condition="'$(PlatformTarget)' == 'x64'  and '$(Configuration)'=='Release'">$(TINYXML2_DIR)\tinyxml2\bin\tinyxml2\x64-Release-Dll\</TINYXML2_DIR_LIBDLL>
 
 		<LocalDebuggerEnvironment>PATH=$(TINYXML2_DIR_LIBDLL);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
 	</PropertyGroup>

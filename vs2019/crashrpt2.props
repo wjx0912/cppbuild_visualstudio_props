@@ -3,13 +3,13 @@
 	<ImportGroup Label="PropertySheets" />
 	<PropertyGroup Label="UserMacros">
 		<CRASHRPT2_DIR>D:\sdk\vs2019\crashrpt2-master-2020.08.25</CRASHRPT2_DIR>
-		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'Win32'">PATH=$(CRASHRPT2_DIR)\build\win32\bin\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
-		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'x64'  ">PATH=$(CRASHRPT2_DIR)\build\x64\bin\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(PlatformTarget)' == 'x86'">PATH=$(CRASHRPT2_DIR)\build\win32\bin\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(PlatformTarget)' == 'x64'">PATH=$(CRASHRPT2_DIR)\build\x64\bin\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
 	</PropertyGroup>
 	<PropertyGroup>
 		<IncludePath>$(CRASHRPT2_DIR)\include\;$(IncludePath)</IncludePath>
-		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(CRASHRPT2_DIR)\build\win32\lib\;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'x64'  ">$(CRASHRPT2_DIR)\build\x64\lib\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x86'">$(CRASHRPT2_DIR)\build\win32\lib\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x64'">$(CRASHRPT2_DIR)\build\x64\lib\;$(LibraryPath)</LibraryPath>
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link>

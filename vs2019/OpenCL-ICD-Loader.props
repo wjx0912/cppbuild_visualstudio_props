@@ -3,15 +3,15 @@
 	<ImportGroup Label="PropertySheets" />
 	<PropertyGroup Label="UserMacros">
 		<OPENCL_ICD_LOADER_DIR>D:\sdk\vs2019\OpenCL-ICD-Loader-2020.06.16\</OPENCL_ICD_LOADER_DIR>
-		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'Win32'">PATH=$(OPENCL_ICD_LOADER_DIR)\build\win32\$(Configuration)\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
-		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'x64'  ">PATH=$(OPENCL_ICD_LOADER_DIR)\build\x64\$(Configuration)\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(PlatformTarget)' == 'x86'">PATH=$(OPENCL_ICD_LOADER_DIR)\build\win32\$(Configuration)\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(PlatformTarget)' == 'x64'">PATH=$(OPENCL_ICD_LOADER_DIR)\build\x64\$(Configuration)\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
 	</PropertyGroup>
 	<PropertyGroup>
 		<IncludePath>$(OPENCL_ICD_LOADER_DIR)\inc\;$(IncludePath)</IncludePath>
 		<!--IncludePath>$(OPENCL_ICD_LOADER_DIR)\loader\;$(IncludePath)</IncludePath>
 		<IncludePath>$(OPENCL_ICD_LOADER_DIR)\loader\windows\;$(IncludePath)</IncludePath-->
-		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(OPENCL_ICD_LOADER_DIR)\build\win32\;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'x64'  ">$(OPENCL_ICD_LOADER_DIR)\build\x64\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x86'">$(OPENCL_ICD_LOADER_DIR)\build\win32\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x64'">$(OPENCL_ICD_LOADER_DIR)\build\x64\;$(LibraryPath)</LibraryPath>
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link>

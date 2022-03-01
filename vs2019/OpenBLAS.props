@@ -6,10 +6,10 @@
 	</PropertyGroup>
 	<PropertyGroup>
 		<IncludePath>$(OPENBLAS_DIR)\;$(IncludePath)</IncludePath>
-		<IncludePath Condition="'$(Platform)' == 'Win32'">$(OPENBLAS_DIR)\build\win32\;$(IncludePath)</IncludePath>
-		<IncludePath Condition="'$(Platform)' == 'x64'  ">$(OPENBLAS_DIR)\build\x64\;$(IncludePath)</IncludePath>
-		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(OPENBLAS_DIR)\build\win32\lib\;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'x64'  ">$(OPENBLAS_DIR)\build\x64\lib\;$(LibraryPath)</LibraryPath>
+		<IncludePath Condition="'$(PlatformTarget)' == 'x86'">$(OPENBLAS_DIR)\build\win32\;$(IncludePath)</IncludePath>
+		<IncludePath Condition="'$(PlatformTarget)' == 'x64'">$(OPENBLAS_DIR)\build\x64\;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x86'">$(OPENBLAS_DIR)\build\win32\lib\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x64'">$(OPENBLAS_DIR)\build\x64\lib\;$(LibraryPath)</LibraryPath>
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link>

@@ -6,8 +6,8 @@
         <!-- download url: https://www.microsoft.com/en-us/download/details.aspx?id=6812 -->
 		<DXSDK_OLD_DIR>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\</DXSDK_OLD_DIR>
 
-		<_DXSDK_OLD_DIR_LIB Condition="'$(Platform)' == 'Win32'">$(DXSDK_OLD_DIR)\Lib\x86\</_DXSDK_OLD_DIR_LIB>
-		<_DXSDK_OLD_DIR_LIB Condition="'$(Platform)' == 'X64'"  >$(DXSDK_OLD_DIR)\Lib\x64\</_DXSDK_OLD_DIR_LIB>
+		<_DXSDK_OLD_DIR_LIB Condition="'$(PlatformTarget)' == 'x86'">$(DXSDK_OLD_DIR)\Lib\x86\</_DXSDK_OLD_DIR_LIB>
+		<_DXSDK_OLD_DIR_LIB Condition="'$(PlatformTarget)' == 'x64'"  >$(DXSDK_OLD_DIR)\Lib\x64\</_DXSDK_OLD_DIR_LIB>
 	</PropertyGroup>
 	<PropertyGroup>
 		<IncludePath>$(DXSDK_OLD_DIR)Include\;$(IncludePath)</IncludePath>

@@ -3,17 +3,17 @@
 	<ImportGroup Label="PropertySheets" />
 	<PropertyGroup Label="UserMacros">
 		<LUA_DIR>D:\sdk\vs2019\lua-5.4.3</LUA_DIR>
-		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Debug'">PATH=$(LUA_DIR)\Debug\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
-		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Release'">PATH=$(LUA_DIR)\Release\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
-		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Debug'">PATH=$(LUA_DIR)\x64\Debug\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
-		<LocalDebuggerEnvironment Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Release'">PATH=$(LUA_DIR)\x64\Release\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(PlatformTarget)' == 'x86'  and '$(Configuration)'=='Debug'">PATH=$(LUA_DIR)\Debug\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(PlatformTarget)' == 'x86'  and '$(Configuration)'=='Release'">PATH=$(LUA_DIR)\Release\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(PlatformTarget)' == 'x64'  and '$(Configuration)'=='Debug'">PATH=$(LUA_DIR)\x64\Debug\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
+		<LocalDebuggerEnvironment Condition="'$(PlatformTarget)' == 'x64'  and '$(Configuration)'=='Release'">PATH=$(LUA_DIR)\x64\Release\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
 	</PropertyGroup>
 	<PropertyGroup>
 		<IncludePath>$(LUA_DIR)\src\;$(IncludePath)</IncludePath>
-		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Debug'">$(LUA_DIR)\Debug\;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'Win32'  and '$(Configuration)'=='Release'">$(LUA_DIR)\Release\;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Debug'">$(LUA_DIR)\x64\Debug\;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'x64'    and '$(Configuration)'=='Release'">$(LUA_DIR)\x64\Release\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x86'  and '$(Configuration)'=='Debug'">$(LUA_DIR)\Debug\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x86'  and '$(Configuration)'=='Release'">$(LUA_DIR)\Release\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x64'  and '$(Configuration)'=='Debug'">$(LUA_DIR)\x64\Debug\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x64'  and '$(Configuration)'=='Release'">$(LUA_DIR)\x64\Release\;$(LibraryPath)</LibraryPath>
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link>

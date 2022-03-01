@@ -11,8 +11,8 @@
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link>
-			<AdditionalDependencies Condition="'$(Platform)' == 'Win32'">VirtualizerSDK32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-			<AdditionalDependencies Condition="'$(Platform)' == 'X64'"  >VirtualizerSDK64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(PlatformTarget)' == 'x86'">VirtualizerSDK32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(PlatformTarget)' == 'x64'"  >VirtualizerSDK64.lib;%(AdditionalDependencies)</AdditionalDependencies>
 		</Link>
 		<ClCompile>
 			<PreprocessorDefinitions>__CODEVIRTUALIZER_XXX__;%(PreprocessorDefinitions)</PreprocessorDefinitions>

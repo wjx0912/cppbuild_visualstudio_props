@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<GLES_2021_DIR>E:\github\chromium\chromium-97.0.4666.1\</GLES_2021_DIR>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(GLES_2021_DIR)\;$(IncludePath)</IncludePath>
+		<IncludePath>$(GLES_2021_DIR)third_party\khronos\;$(IncludePath)</IncludePath>
+		<IncludePath>$(GLES_2021_DIR)third_party\khronos\EGL\;$(IncludePath)</IncludePath>
+		<IncludePath>$(GLES_2021_DIR)third_party\khronos\GLES2\;$(IncludePath)</IncludePath>
+		<IncludePath>$(GLES_2021_DIR)third_party\khronos\GLES3\;$(IncludePath)</IncludePath>
+	</PropertyGroup>
+</Project>

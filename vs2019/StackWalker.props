@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!--
+	https://www.codeproject.com/Articles/11132/Walking-the-callstack-2
+	https://github.com/JochenKalmbach/StackWalker
+	-->
+	<ImportGroup Label="PropertySheets" />
+	<PropertyGroup Label="UserMacros">
+		<STACKWALKER_DIR>D:\sdk\vs2019\StackWalker-master-2021.11.03\</STACKWALKER_DIR>
+	</PropertyGroup>
+	<PropertyGroup>
+		<IncludePath>$(STACKWALKER_DIR)\Main\StackWalker\;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x86'  and '$(Configuration)'=='Debug'  ">$(STACKWALKER_DIR)\build\x86\Debug\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x86'  and '$(Configuration)'=='Release'">$(STACKWALKER_DIR)\build\x86\Release\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x86'  and '$(Configuration)'=='MinSizeRel'">$(STACKWALKER_DIR)\build\x86\Release\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x86'  and '$(Configuration)'=='RelWithDebInfo'">$(STACKWALKER_DIR)\build\x86\Release\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'  and '$(Configuration)'=='Debug'  ">$(STACKWALKER_DIR)\build\x64\Debug\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'  and '$(Configuration)'=='Release'">$(STACKWALKER_DIR)\build\x64\Release\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'  and '$(Configuration)'=='MinSizeRel'">$(STACKWALKER_DIR)\build\x64\Release\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'  and '$(Configuration)'=='RelWithDebInfo'">$(STACKWALKER_DIR)\build\x64\Release\;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<Link>
+			<AdditionalDependencies>StackWalker.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+		<ClCompile>
+			<PreprocessorDefinitions>__STACKWALKER__2021__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>
+

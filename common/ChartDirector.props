@@ -5,8 +5,8 @@
 	<PropertyGroup>
 		<CHART_DIRECTOR>D:\sdk\common\ChartDirector_6.3.0.0</CHART_DIRECTOR>
 
-		<_CHART_DIRECTOR_LIB Condition="'$(Platform)' == 'Win32'">$(CHART_DIRECTOR)\lib32\</_CHART_DIRECTOR_LIB>
-		<_CHART_DIRECTOR_LIB Condition="'$(Platform)' == 'X64'"  >$(CHART_DIRECTOR)\lib64\</_CHART_DIRECTOR_LIB>
+		<_CHART_DIRECTOR_LIB Condition="'$(PlatformTarget)' == 'x86'">$(CHART_DIRECTOR)\lib32\</_CHART_DIRECTOR_LIB>
+		<_CHART_DIRECTOR_LIB Condition="'$(PlatformTarget)' == 'x64'"  >$(CHART_DIRECTOR)\lib64\</_CHART_DIRECTOR_LIB>
 
 		<LocalDebuggerEnvironment>PATH=$(_CHART_DIRECTOR_LIB);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
 

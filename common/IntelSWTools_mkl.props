@@ -5,18 +5,18 @@
 		<INTELSWTOOLS_MKL_PATH>C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2020.4.311\windows\mkl\</INTELSWTOOLS_MKL_PATH>
 
 		<IncludePath>$(INTELSWTOOLS_MKL_PATH)\include\;$(IncludePath)</IncludePath>
-		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(INTELSWTOOLS_MKL_PATH)\lib\ia32_win\;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'X64'">$(INTELSWTOOLS_MKL_PATH)\lib\intel64_win\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x86'">$(INTELSWTOOLS_MKL_PATH)\lib\ia32_win\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x64'">$(INTELSWTOOLS_MKL_PATH)\lib\intel64_win\;$(LibraryPath)</LibraryPath>
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link>
-			<AdditionalDependencies Condition="'$(Platform)'=='Win32'">
+			<AdditionalDependencies Condition="'$(PlatformTarget)'=='x86'">
 				mkl_intel_c.lib;
 				mkl_sequential.lib;
 				mkl_core.lib;
 				%(AdditionalDependencies)
 			</AdditionalDependencies>
-			<AdditionalDependencies Condition="'$(Platform)'=='X64'">
+			<AdditionalDependencies Condition="'$(PlatformTarget)'=='x64'">
 				mkl_intel_lp64.lib;
 				mkl_sequential.lib;
 				mkl_core.lib;

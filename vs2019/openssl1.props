@@ -2,8 +2,8 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ImportGroup Label="PropertySheets" />
 	<PropertyGroup Label="UserMacros">
-		<OPENSSL3_DIR Condition="'$(Platform)' == 'Win32'">D:\sdk\vs2019\openssl-openssl-3.0.0-alpha9\dist-win32</OPENSSL3_DIR>
-		<OPENSSL3_DIR Condition="'$(Platform)' == 'x64'"  >D:\sdk\vs2019\openssl-openssl-3.0.0-alpha9\dist-x64</OPENSSL3_DIR>
+		<OPENSSL3_DIR Condition="'$(PlatformTarget)' == 'x86'">D:\sdk\vs2019\openssl-openssl-3.0.0-alpha9\dist-win32</OPENSSL3_DIR>
+		<OPENSSL3_DIR Condition="'$(PlatformTarget)' == 'x64'">D:\sdk\vs2019\openssl-openssl-3.0.0-alpha9\dist-x64</OPENSSL3_DIR>
 		<LocalDebuggerEnvironment>PATH=$(OPENSSL3_DIR)\bin\;$(OPENSSL3_DIR)\lib\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
 	</PropertyGroup>
 	<PropertyGroup>

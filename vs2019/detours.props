@@ -6,8 +6,8 @@
 	</PropertyGroup>
 	<PropertyGroup>
 		<IncludePath>$(DETOURS_DIR)\include\;$(IncludePath)</IncludePath>
-		<LibraryPath Condition="'$(Platform)' == 'x64'">$(DETOURS_DIR)\lib.X64\;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(DETOURS_DIR)\lib.X86\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x64'">$(DETOURS_DIR)\lib.X64\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(PlatformTarget)' == 'x86'">$(DETOURS_DIR)\lib.X86\;$(LibraryPath)</LibraryPath>
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link>

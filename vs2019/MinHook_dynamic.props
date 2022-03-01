@@ -8,13 +8,13 @@
 	</PropertyGroup>
 	<PropertyGroup>
 		<IncludePath>$(MINHOOK_DIR)\..\..\include\;$(IncludePath)</IncludePath>
-		<LibraryPath Condition="'$(Configuration)' == 'Debug'">$(MINHOOK_DIR)\lib\Debug\;$(LibraryPath)</LibraryPath>
-		<LibraryPath Condition="'$(Configuration)' == 'Release'">$(MINHOOK_DIR)\lib\Release\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Configuration)' == 'Debug'">$(MINHOOK_DIR)\bin\Debug\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Configuration)' == 'Release'">$(MINHOOK_DIR)\bin\Release\;$(LibraryPath)</LibraryPath>
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<Link>
-			<AdditionalDependencies Condition="'$(Platform)' == 'x64'">MinHook.x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
-			<AdditionalDependencies Condition="'$(Platform)' == 'Win32'">MinHook.x86.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(PlatformTarget)' == 'x64'">MinHook.x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies Condition="'$(PlatformTarget)' == 'x86'">MinHook.x86.lib;%(AdditionalDependencies)</AdditionalDependencies>
 		</Link>
 		<ClCompile>
 			<PreprocessorDefinitions>__MINHOOK__2021__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
