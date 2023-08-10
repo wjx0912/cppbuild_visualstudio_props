@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ImportGroup Label="PropertySheets" />
 	<PropertyGroup Label="UserMacros">
-		<LIBUV_DIR>D:\sdk\vs2022\libuv-1.44.2</LIBUV_DIR>
+		<LIBUV_DIR>D:\sdk\vs2022\libuv-1.46</LIBUV_DIR>
 		<LocalDebuggerEnvironment Condition="'$(PlatformTarget)' == 'x86'  and '$(Configuration)'=='Debug'">PATH=$(LIBUV_DIR)\build\x86\Debug\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
 		<LocalDebuggerEnvironment Condition="'$(PlatformTarget)' == 'x86'  and '$(Configuration)'=='Release'">PATH=$(LIBUV_DIR)\build\x86\Release\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
 		<LocalDebuggerEnvironment Condition="'$(PlatformTarget)' == 'x64'  and '$(Configuration)'=='Debug'">PATH=$(LIBUV_DIR)\build\x64\Debug\;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('%PATH%', '').Replace(';;', ';'));%PATH%</LocalDebuggerEnvironment>
