@@ -1,6 +1,7 @@
 @echo off
 set boost_dir="D:/sdk/props_build_vs2022/boost_1_82_0"
 
+time /t
 cd /d %boost_dir%
 call "bootstrap.bat"
 
@@ -17,4 +18,5 @@ rm  -fr  ./build/x86-static/build/
 rm  -fr  ./build/x64-default/build/
 rm  -fr  ./build/x64-static/build/
 
+time /t
 pause

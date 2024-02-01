@@ -1,4 +1,5 @@
 @echo off
+time /t
 
 cd /d "D:/sdk/props_build_vs2022/opencv-4.9.0/build/x64-cpu"
 call "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvars64.bat"
@@ -14,4 +15,5 @@ msbuild INSTALL.vcxproj   /p:Configuration=Release
 msbuild ALL_BUILD.vcxproj /p:Configuration=Debug
 msbuild INSTALL.vcxproj   /p:Configuration=Debug
 
+time /t
 pause
